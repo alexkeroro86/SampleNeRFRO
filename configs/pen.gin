@@ -1,0 +1,18 @@
+VoxMLP.interp_method = 'linear3'
+VoxMLP.use_direct_output = True
+VoxMLP.use_residual = True  # align 'Config.ior_weight_name'
+VoxMLP.normalized = False
+VoxMLP.annealed = True
+PathSampler.normal_radius_scale = 0.1
+
+# ------ Initial refractive index ------
+Config.kernel_size = 5
+Config.kernel_sigma = 3.0
+Config.voxel_grid = 'voxelize_uni384_bbox-3.5'
+NerfModel.use_mask_bbox = False
+NerfModel.bd_cut_dist = 6.0
+
+# ------ Pretrained weight ------
+Config.radiance_weight_name = None
+Config.ior_weight_name = None  # align 'VoxMLP.use_residual'
+Config.all_weight_name = 'all'

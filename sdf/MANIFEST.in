@@ -1,0 +1,12 @@
+include README.md
+include LICENSE.txt
+include MANIFEST.in
+include setup.py
+include pybind.cpp
+include src/sdf.cpp
+include src/renderer.cpp
+include src/util.cpp
+include include/sdf/sdf.hpp
+include include/sdf/internal/sdf_util.hpp
+include include/sdf/internal/nanoflann.hpp
+include include/sdf/internal/RTree.h

@@ -1,0 +1,11 @@
+*_train
+*_test
+*_val
+__pycache__
+
+*.jpg
+*.pdf
+*.png
+*.pkl
+*.json
+*.obj
