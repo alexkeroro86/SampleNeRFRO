@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html><head lang="en">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title></title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <base href="/"> -->
+
+    <!-- <link rel="apple-touch-icon" href="https://groups.csail.mit.edu/graphics/rendernet/apple-touch-icon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="files/bootstrap.min.css">
+    <link rel="stylesheet" href="files/font-awesome.min.css">
+    <link rel="stylesheet" href="files/codemirror.min.css">
+    <link rel="stylesheet" href="files/app.css">
+
+    <link rel="stylesheet" href="files/bootstrap.min_002.css">
+
+    <script src="files/jquery.min.js"></script>
+    <script src="files/bootstrap.min.js"></script>
+    <script src="files/codemirror.min.js"></script>
+    <script src="files/clipboard.min.js"></script>
+    
+    <script src="files/app.js"></script>
+</head>
+
+<body data-new-gr-c-s-check-loaded="8.904.0" data-gr-ext-installed="">
+    <div class="container">
+        <div class="row">
+            <h1 class="col-md-12 text-center">
+              Sampling Neural Radiance Fields
+              <br> for Refractive Objects
+              <br><small>SIGGRAPH Asia 2022 Technical Communications</small>
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://github.com/alexkeroro86">
+                            Jen-I Pan
+                        </a>
+                        <br>National Tsing Hua University
+                    </li>
+                    <li>
+                        <a href="https://github.com/ericsujw">
+                            Jheng-Wei Su
+                        </a>
+                        <br>National Tsing Hua University
+                    </li>
+                    <li>
+                        <a href="">
+                            Kai-Wen Hsiao
+                        </a>
+                        <br>National Tsing Hua University
+                    </li>
+                    <br>
+                    <li>
+                        <a href="">
+                            Ting-Yu Yen
+                        </a>
+                        <br>National Tsing Hua University
+                    </li>
+                    <li>
+                        <a href="https://cgv.cs.nthu.edu.tw/hkchu/">
+                            Hung-Kuo Chu
+                        </a>
+                        <br>National Tsing Hua University
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 text-center">
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="" target="_blank">
+                        <img src="assets/pdf.png" height="50px">
+                            <h5><b>Paper</b></h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://dl.acm.org/doi/abs/10.1145/3550340.3564234" target="_blank">
+                        <img src="assets/youtube.png" height="50px">
+                            <h5><b>Video</b></h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://drive.google.com/drive/folders/1Ys393lwzZ1feXnMMHG7FS-f_1aqDpx6l?usp=share_link" target="_blank">
+                        <img src="assets/database.png" height="50px">
+                            <h5><b>Data</b></h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/alexkeroro86/SampleNeRFRO" target="_blank">
+                        <img src="assets/github.png" height="50px">
+                            <h5><b>Code</b></h5>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <figure class="col-md-8 col-md-offset-2">
+            <img src="assets/teaser.png" class="img-responsive" alt="overview">
+                <figcaption>
+                </figcaption>
+            </figure>
+        </div>
+        <!-- <div class="row"> -->
+        <!--     <div class="col&#45;md&#45;8 col&#45;md&#45;offset&#45;2 text&#45;center last"> -->
+        <!--         <iframe align="center" width="560" height="315" src="https://www.youtube.com/embed/GAe0qKKQY_I" frameborder="0" allowfullscreen></iframe> -->
+        <!--     </div> -->
+        <!-- </div> -->
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+Recently, differentiable volume rendering in neural radiance fields (NeRF) has gained a lot of popularity,
+and its variants have attained many impressive results.
+However, existing methods usually assume the scene is a homogeneous volume so that a ray is cast along the straight path.
+In this work, the scene is instead a heterogeneous volume with a piecewise-constant refractive index, where
+the path will be curved if it intersects the different refractive indices. For novel view synthesis of refractive objects,
+our NeRF-based framework aims to optimize the radiance fields of bounded volume and boundary from multi-view posed images with
+refractive object silhouettes. To tackle this challenging problem,
+the refractive index of a scene is reconstructed from silhouettes. Given the refractive index,
+we extend the stratified and hierarchical sampling techniques in NeRF to allow drawing samples along a curved path tracked
+by the Eikonal equation. The results indicate that our framework outperforms the state-of-the-art method
+both quantitatively and qualitatively, demonstrating better performance on the perceptual similarity metric and
+an apparent improvement in the rendering quality on several synthetic and real scenes.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                <!-- <h3 class="text&#45;center"> -->
+                    Results
+                </h3>
+                <h4>
+                    Synthetic Scenes
+                </h4>
+                <figure>
+                    <img src="assets/torus.png" class="img-responsive" alt="overview" style="margin-bottom: 0.25em;">
+                    <video class="centered" autoplay="" muted="" loop="" playsinline="" width="100%">
+                        <source src="assets/torus_skydome-bkgd_no-partial-reflect_cycles_test_preds_default.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <figcaption>
+                        Torus.
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/ship.png" class="img-responsive" alt="overview" style="margin-bottom: 0.25em;">
+                    <video class="centered" autoplay="" muted="" loop="" playsinline="" width="100%">
+                        <source src="assets/ship_skydome-bkgd_no-partial-reflect_cycles_test_preds_default.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <figcaption>
+                        Ship.
+                        <br>
+                        Ship model ©<a href="https://skfb.ly/6DV9G">Loïc Norgeot</a>
+                    </figcaption>
+                </figure>
+                <h4>
+                    Real Scenes
+                </h4>
+                <figure>
+                    <img src="assets/dolphin.png" class="img-responsive" alt="overview" style="margin-bottom: 0.25em;">
+                    <video class="centered" autoplay="" muted="" loop="" playsinline="" width="100%">
+                        <source src="assets/dolphin_test_preds_default.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <figcaption>
+                        Dolphin.
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/pen.png" class="img-responsive" alt="overview" style="margin-bottom: 0.25em;">
+                    <video class="centered" autoplay="" muted="" loop="" playsinline="" width="100%">
+                        <source src="assets/pen_test_preds_video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <figcaption>
+                        Pen.
+                        <br>
+                        Data provided by <i>Eikonal Fields for Refractive Novel-View Synthesis, SIGGRAPH 2022 (Conference Proceedings)</i>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    BibTeX
+                </h3>
+                <div class="form-group col-md-10 col-md-offset-1">
+<textarea id="bibtex" class="form-control" readonly="readonly" style="display: none;">@inproceedings{pan2022sample,
+    author = {Pan, Jen-I and Su, Jheng-Wei and Hsiao, Kai-Wen and Yen, Ting-Yu and Chu, Hung-Kuo},
+    title = {Sampling Neural Radiance Fields for Refractive Objects},
+    year = {2022},
+    isbn = {9781450394659},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3550340.3564234},
+    doi = {10.1145/3550340.3564234},
+    booktitle = {SIGGRAPH Asia 2022 Technical Communications},
+    articleno = {5},
+    numpages = {4},
+    keywords = {eikonal rendering, neural radiance fields},
+    location = {Daegu, Republic of Korea},
+    series = {SA '22 Technical Communications}
+}
+</textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                    The website template was borrowed from
+                    <a href="https://groups.csail.mit.edu/graphics/rendernet/">Michaël Gharbi</a>
+                    ,
+                    <a href="https://jonbarron.info/mipnerf360/">Jonathan T. Barron</a>
+                    and
+                    <a href="https://nvlabs.github.io/instant-ngp/">Thomas Müller</a>
+                    .
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
