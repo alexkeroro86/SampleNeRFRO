@@ -1,6 +1,6 @@
 # Sampling Neural Radiance Fields for Refractive Objects
 
-### [[Project](https://alexkeroro86.github.io/SampleNeRFRO/)] [[Paper]()] [[Video](https://dl.acm.org/doi/abs/10.1145/3550340.3564234)] [[Data](https://drive.google.com/drive/folders/1Ys393lwzZ1feXnMMHG7FS-f_1aqDpx6l?usp=share_link)]
+### [[Project](https://alexkeroro86.github.io/SampleNeRFRO/)] [[Paper](https://arxiv.org/abs/2211.14799)] [[Video](https://dl.acm.org/doi/abs/10.1145/3550340.3564234)] [[Data](https://drive.google.com/drive/folders/1Ys393lwzZ1feXnMMHG7FS-f_1aqDpx6l?usp=share_link)]
 
 This is an official implementation of Sampling Neural Radiance Fields for Refractive Objects.
 
