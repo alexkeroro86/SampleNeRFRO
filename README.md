@@ -42,7 +42,7 @@ ${DATA_DIR}
     |-- dolphin
     |-- ${SCENE}
 ```
-> Note that __Ball__, __Pen__, and __Glass__ are data provided by _Eikonal Fields for Refractive Novel-View Synthesis, SIGGRAPH 2022 (Conference Proceedings)_, and we include our preprocessed results.
+> Note that __Ball__, __Pen__, and __Glass__ are data provided by [_Eikonal Fields for Refractive Novel-View Synthesis, SIGGRAPH 2022 (Conference Proceedings)_](https://eikonalfield.mpi-inf.mpg.de/), and we include our preprocessed results.
 
 ## Pretrained Models
 
@@ -226,4 +226,5 @@ series = {SA '22 Technical Communications}
 
 ## Acknowledgements
 
-The code base contains [JaxNeRF](https://github.com/google-research/google-research/tree/master/jaxnerf), [mip-NeRF](https://github.com/google/mipnerf), [pysdf](https://github.com/sxyu/sdf), and [LLFF](https://github.com/Fyusion/LLFF). The synthetic scenes are rendered from [Ship](https://skfb.ly/6DV9G), [DeerGlobe](https://skfb.ly/orFnK), and [StarLamp](https://blendswap.com/blend/12256) by Blender.
+The code base contains [JaxNeRF](https://github.com/google-research/google-research/tree/master/jaxnerf), [mip-NeRF](https://github.com/google/mipnerf), [pysdf](https://github.com/sxyu/sdf), and [LLFF](https://github.com/Fyusion/LLFF). The synthetic scenes are rendered from [Ship](https://skfb.ly/6DV9G), [DeerGlobe](https://skfb.ly/orFnK), and [StarLamp](https://blendswap.com/blend/12256) by Blender, and three of the real scenes are from [
+eikonalfield](https://eikonalfield.mpi-inf.mpg.de/).
